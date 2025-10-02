@@ -1,0 +1,60 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Gradient -->
+  <rect width="800" height="600" fill="url(#bg-gradient)"/>
+  <defs>
+    <linearGradient id="bg-gradient" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="50%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <linearGradient id="plane-gradient" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f0f9ff"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Decorative Circles -->
+  <circle cx="150" cy="100" r="80" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="650" cy="500" r="100" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="700" cy="150" r="60" fill="rgba(255,255,255,0.15)"/>
+  
+  <!-- Main Icon - Airplane -->
+  <g transform="translate(300, 200)">
+    <!-- Airplane Body -->
+    <path d="M100 80 L140 100 L140 120 L100 100 Z" fill="url(#plane-gradient)" opacity="0.9"/>
+    <path d="M100 80 L20 60 L20 70 L100 90 Z" fill="url(#plane-gradient)"/>
+    <path d="M100 110 L30 140 L30 150 L100 120 Z" fill="url(#plane-gradient)" opacity="0.8"/>
+    <ellipse cx="100" cy="100" rx="15" ry="25" fill="#ffffff"/>
+    <path d="M85 100 L40 95 L40 105 L85 100 Z" fill="#ffffff" opacity="0.9"/>
+    
+    <!-- Window -->
+    <circle cx="95" cy="100" r="8" fill="#0ea5e9" opacity="0.3"/>
+  </g>
+  
+  <!-- Location Pin -->
+  <g transform="translate(450, 250)">
+    <path d="M25 10 C25 4.5 20.5 0 15 0 C9.5 0 5 4.5 5 10 C5 17.5 15 30 15 30 C15 30 25 17.5 25 10 Z" fill="#ffffff" opacity="0.9"/>
+    <circle cx="15" cy="10" r="5" fill="#0ea5e9"/>
+  </g>
+  
+  <!-- Globe Icon -->
+  <g transform="translate(550, 350)">
+    <circle cx="30" cy="30" r="28" stroke="#ffffff" stroke-width="3" fill="none" opacity="0.8"/>
+    <ellipse cx="30" cy="30" rx="10" ry="28" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.6"/>
+    <line x1="5" y1="30" x2="55" y2="30" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="400" y="480" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    Tourvago
+  </text>
+  
+  <text x="400" y="520" font-family="Arial, sans-serif" font-size="20" fill="rgba(255,255,255,0.9)" text-anchor="middle">
+    Travel Booking Platform
+  </text>
+  
+  <!-- Decorative Lines -->
+  <line x1="100" y1="550" x2="250" y2="550" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+  <line x1="550" y1="550" x2="700" y2="550" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+</svg>
+
