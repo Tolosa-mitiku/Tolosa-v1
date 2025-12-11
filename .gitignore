@@ -48,13 +48,4 @@ Thumbs.db
 .DS_Store
 
 # Tolosa's Important Docs - DO NOT COMMIT
-/tolosa-docs/
-/important-docs/
-/docs/private/
-*.private.md
-*-private.md
-
-# Other sensitive folders
-/secrets/
-/credentials/
-/private/
+/Tolosa important docs/
