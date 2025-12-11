@@ -20,31 +20,7 @@ export default function ProjectDetailPage() {
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
-  if (!project) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Project Not Found
-          </h1>
-          <button
-            onClick={() => router.push("/")}
-            className="px-6 py-3 bg-gradient-to-r from-primary-500 to-accent-500 text-white rounded-full font-semibold"
-          >
-            Back to Home
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  const categoryColors = {
-    web: "from-blue-500 to-cyan-500",
-    mobile: "from-purple-500 to-pink-500",
-    fullstack: "from-green-500 to-emerald-500"
-  };
-
-  // Navigation handlers
+  // Navigation handlers - MUST be defined before early return
   const nextImage = useCallback(() => {
     if (!project) return;
     setSelectedImage((prev) => (prev + 1) % project.screenshots.length);
@@ -97,6 +73,31 @@ export default function ProjectDetailPage() {
       document.body.style.overflow = 'unset';
     };
   }, [isLightboxOpen]);
+
+  // NOW check if project exists - AFTER all hooks are called
+  if (!project) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Project Not Found
+          </h1>
+          <button
+            onClick={() => router.push("/")}
+            className="px-6 py-3 bg-gradient-to-r from-primary-500 to-accent-500 text-white rounded-full font-semibold"
+          >
+            Back to Home
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  const categoryColors = {
+    web: "from-blue-500 to-cyan-500",
+    mobile: "from-purple-500 to-pink-500",
+    fullstack: "from-green-500 to-emerald-500"
+  };
 
   const handleZoomIn = () => setZoom((z) => Math.min(z + 0.25, 3));
   const handleZoomOut = () => setZoom((z) => Math.max(z - 0.25, 0.5));
