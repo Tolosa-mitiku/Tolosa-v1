@@ -1,44 +1,61 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Github, Linkedin, Instagram, Twitter, Download, ChevronRight, Users, ArrowRight, Code2, Send } from "lucide-react";
-import { useState, useEffect } from "react";
+import {
+  ArrowRight,
+  ChevronRight,
+  Code2,
+  Download,
+  Github,
+  Instagram,
+  Linkedin,
+  Send,
+  Twitter,
+  Users,
+} from "lucide-react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const socialLinks = [
-  { 
-    name: "GitHub", 
-    icon: Github, 
-    href: "https://github.com/Tolosa-mitiku", 
-    gradient: "from-gray-700 to-gray-900"
+  {
+    name: "GitHub",
+    icon: Github,
+    href: "https://github.com/Tolosa-mitiku",
+    gradient: "from-gray-700 to-gray-900",
   },
-  { 
-    name: "LinkedIn", 
-    icon: Linkedin, 
-    href: "https://www.linkedin.com/in/tolosa-mitiku/", 
-    gradient: "from-blue-500 to-blue-700"
+  {
+    name: "LinkedIn",
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/tolosa-mitiku/",
+    gradient: "from-blue-500 to-blue-700",
   },
-  { 
-    name: "Instagram", 
-    icon: Instagram, 
-    href: "https://www.instagram.com/woni116/", 
-    gradient: "from-purple-500 via-pink-500 to-red-500"
+  {
+    name: "Instagram",
+    icon: Instagram,
+    href: "https://www.instagram.com/woni116/",
+    gradient: "from-purple-500 via-pink-500 to-red-500",
   },
-  { 
-    name: "Twitter", 
-    icon: Twitter, 
-    href: "https://x.com/woni116", 
-    gradient: "from-sky-400 to-blue-600"
+  {
+    name: "Twitter",
+    icon: Twitter,
+    href: "https://x.com/woni116",
+    gradient: "from-sky-400 to-blue-600",
   },
-  { 
-    name: "Telegram", 
-    icon: Send, 
-    href: "https://t.me/Wongelmitiku", 
-    gradient: "from-sky-400 to-blue-500"
+  {
+    name: "Telegram",
+    icon: Send,
+    href: "https://t.me/Wongelmitiku",
+    gradient: "from-sky-400 to-blue-500",
   },
 ];
 
-const Typewriter = ({ text, speed = 100 }: { text: string; speed?: number }) => {
+const Typewriter = ({
+  text,
+  speed = 100,
+}: {
+  text: string;
+  speed?: number;
+}) => {
   const [displayText, setDisplayText] = useState("");
 
   useEffect(() => {
@@ -73,19 +90,21 @@ export default function Hero() {
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-20 pb-10">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center overflow-hidden pt-20 pb-10"
+    >
       {/* Dynamic Background */}
       <div className="absolute inset-0 -z-10 bg-white dark:bg-gray-950">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-primary-500/10 via-transparent to-transparent opacity-50" />
         <div className="absolute bottom-0 right-0 h-[500px] w-[500px] bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-accent-500/10 via-transparent to-transparent opacity-50" />
       </div>
 
-      <motion.div 
+      <motion.div
         style={{ y, opacity }}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10"
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          
           {/* Left Column: Content */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
             {/* Organization Badge */}
@@ -111,7 +130,7 @@ export default function Hero() {
             >
               <span className="block mb-2">Tolosa Mitiku</span>
               <span className="block text-xl md:text-2xl lg:text-3xl text-gray-500 dark:text-gray-400 font-normal mt-4 min-h-[60px] lg:min-h-[auto]">
-                <Typewriter text="Elite Software Engineer & Architect" speed={50} />
+                <Typewriter text="Software Engineer & Architect" speed={50} />
               </span>
             </motion.h1>
 
@@ -122,9 +141,14 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mb-10 leading-relaxed"
             >
-              Driving technical innovation and business growth. Currently leading 
-              <span className="font-semibold text-green-600 dark:text-green-400"> AfriDev</span>, 
-              building scalable systems, and empowering the next generation of engineers.
+              Driving technical innovation and business growth. Currently
+              leading
+              <span className="font-semibold text-green-600 dark:text-green-400">
+                {" "}
+                AfriDev
+              </span>
+              , building scalable systems, and empowering the next generation of
+              engineers.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -143,7 +167,7 @@ export default function Hero() {
                 View Selected Works
                 <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </motion.a>
-              
+
               <motion.a
                 href="/Tolosa-Mitiku-Resume.pdf"
                 download="Tolosa-Mitiku-Resume.pdf"
@@ -173,23 +197,25 @@ export default function Hero() {
                     rel="noopener noreferrer"
                     initial={{ opacity: 0, scale: 0.5, rotate: -180 }}
                     animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                    transition={{ 
+                    transition={{
                       delay: 0.5 + idx * 0.1,
                       type: "spring",
-                      stiffness: 200
+                      stiffness: 200,
                     }}
-                    whileHover={{ 
-                      y: -8, 
+                    whileHover={{
+                      y: -8,
                       scale: 1.15,
                       rotate: [0, -10, 10, 0],
-                      transition: { duration: 0.3 }
+                      transition: { duration: 0.3 },
                     }}
                     whileTap={{ scale: 0.9 }}
                     className="group relative p-3 rounded-xl bg-gray-100 dark:bg-gray-800 shadow-md hover:shadow-2xl border border-gray-200 dark:border-gray-700 transition-all duration-300 overflow-hidden"
                   >
                     {/* Gradient overlay on hover */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${link.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                    
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${link.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                    />
+
                     {/* Icon */}
                     <Icon className="w-5 h-5 relative z-10 text-gray-600 dark:text-gray-400 group-hover:text-white transition-colors duration-300" />
                     <span className="sr-only">{link.name}</span>
@@ -216,7 +242,7 @@ export default function Hero() {
                 transition={{
                   duration: 8,
                   repeat: Infinity,
-                  ease: "easeInOut"
+                  ease: "easeInOut",
                 }}
                 className="absolute inset-0 bg-gradient-to-tr from-primary-500/30 to-accent-500/30 rounded-full blur-2xl"
               />
@@ -229,7 +255,7 @@ export default function Hero() {
                   duration: 8,
                   repeat: Infinity,
                   ease: "easeInOut",
-                  delay: 1
+                  delay: 1,
                 }}
                 className="absolute inset-4 bg-gradient-to-bl from-blue-500/30 to-purple-500/30 rounded-full blur-2xl"
               />
@@ -240,18 +266,18 @@ export default function Hero() {
                 transition={{
                   duration: 4,
                   repeat: Infinity,
-                  ease: "easeInOut"
+                  ease: "easeInOut",
                 }}
                 className="relative w-full h-full rounded-[2rem] overflow-hidden border-4 border-white/20 dark:border-white/10 shadow-2xl backdrop-blur-sm z-10 bg-white/5"
               >
                 <Image
                   src="/profile.png"
-                  alt="Tolosa Mitiku"
+                  alt="Tolosa Mitiku - Software Engineer & Architect, Business Manager at AfriDev Organization"
                   fill
                   className="object-cover"
                   priority
                 />
-                
+
                 {/* Glass Reflection Effect */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-50" />
               </motion.div>
@@ -259,24 +285,36 @@ export default function Hero() {
               {/* Decorative Floating Elements */}
               <motion.div
                 animate={{ y: [10, -10, 10], rotate: [0, 10, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl shadow-lg flex items-center justify-center z-20"
               >
                 <Code2 className="w-6 h-6 text-white" />
               </motion.div>
               <motion.div
                 animate={{ y: [-15, 15, -15], rotate: [0, -10, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1,
+                }}
                 className="absolute -bottom-4 -left-4 w-16 h-16 bg-white dark:bg-gray-800 rounded-xl shadow-lg flex items-center justify-center z-20 border border-gray-100 dark:border-gray-700"
               >
                 <div className="text-center">
-                  <span className="block text-xs font-bold text-gray-900 dark:text-white">5+</span>
-                  <span className="block text-[8px] text-gray-500 uppercase">Years</span>
+                  <span className="block text-xs font-bold text-gray-900 dark:text-white">
+                    5+
+                  </span>
+                  <span className="block text-[8px] text-gray-500 uppercase">
+                    Years
+                  </span>
                 </div>
               </motion.div>
             </motion.div>
           </div>
-
         </div>
       </motion.div>
 

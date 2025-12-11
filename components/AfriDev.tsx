@@ -135,7 +135,7 @@ const TeamMemberCard = ({ member, index }: { member: typeof teamMembers[0]; inde
             <div className="w-full h-full rounded-2xl overflow-hidden relative bg-white dark:bg-gray-950">
               <Image 
                 src={member.image} 
-                alt={member.name}
+                alt={`${member.name} - ${member.role} at AfriDev Organization`}
                 fill
                 className="object-cover"
                 priority

@@ -1,0 +1,19 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow admin or private paths (if any in future)
+# Disallow: /admin/
+# Disallow: /api/private/
+
+# Sitemap location
+Sitemap: https://tolosa-mitiku.com/sitemap.xml
+
+# Crawl-delay for specific bots (optional)
+# User-agent: Bingbot
+# Crawl-delay: 1
+
+# Block specific bots if needed (optional)
+# User-agent: BadBot
+# Disallow: /
+

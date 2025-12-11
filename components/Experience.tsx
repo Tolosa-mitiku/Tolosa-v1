@@ -218,7 +218,7 @@ const ExperienceCard = ({
                   <div className="relative w-full h-full p-2">
                     <Image
                       src={exp.logo}
-                      alt={exp.company}
+                      alt={`${exp.company} logo - ${exp.role}`}
                       fill
                       className="object-contain p-1"
                     />

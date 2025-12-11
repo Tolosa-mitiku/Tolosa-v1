@@ -73,7 +73,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           {project.thumbnail ? (
             <Image
               src={project.thumbnail}
-              alt={project.title}
+              alt={`${project.title} project screenshot`}
               fill
               className="object-cover group-hover:scale-110 transition-transform duration-500"
             />
